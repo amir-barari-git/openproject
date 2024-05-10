@@ -10,7 +10,7 @@ x-op-restart-policy: &restart_policy
   restart: unless-stopped
 x-op-image: &image
   image: openproject/openproject:${TAG:-14}
-  volume:
+  volumes:
     - "./users/srv"
 x-op-app: &app
   <<: [*image, *restart_policy]
